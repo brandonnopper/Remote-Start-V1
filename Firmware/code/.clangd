@@ -1,0 +1,8 @@
+CompileFlags:
+  Add: [
+    "-Iinc",            # Include the inc directory
+    "-DSTM32F103xB",    # Define the target device macro
+    "-mcpu=cortex-m3",  # Specify the CPU
+    "-mthumb",          # Use Thumb instruction set
+    "-mfloat-abi=soft"  # Specify the floating-point ABI
+  ]
