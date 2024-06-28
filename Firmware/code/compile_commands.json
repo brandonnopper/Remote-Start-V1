@@ -25,15 +25,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/exti.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/exti.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/exti.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -61,15 +59,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/gpio.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/gpio.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/gpio.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -97,15 +93,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/hse_clock.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/hse_clock.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/hse_clock.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -133,15 +127,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/main.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/main.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/main.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -169,15 +161,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/system_stm32f1xx.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/system_stm32f1xx.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/system_stm32f1xx.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -205,15 +195,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/systick.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/systick.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/systick.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -241,15 +229,13 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/timer.c"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/timer.c",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/timer.c",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   },
   {
     "arguments": [
@@ -277,14 +263,12 @@
       "-DSTM32F103xB",
       "-TSTM32F103C8TX_FLASH.ld",
       "--specs=nano.specs",
-      "-Wl,--gc-sections",
-      "-Wl,-Map=firmware.elf.map",
       "-o",
       "firmware.elf",
       "src/startup_stm32f103c8tx.s"
     ],
-    "directory": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code",
-    "file": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/src/startup_stm32f103c8tx.s",
-    "output": "/home/brandon/Desktop/Electronics projects/Geo remote start v1/Firmware/code/firmware.elf"
+    "directory": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code",
+    "file": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/src/startup_stm32f103c8tx.s",
+    "output": "/home/brandon/Desktop/Electronics projects/Remote-Start-V1/Firmware/code/firmware.elf"
   }
 ]
