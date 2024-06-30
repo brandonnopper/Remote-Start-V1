@@ -16,7 +16,7 @@
 #define DEBOUNCE_DELAY_MS 50
 
 #define MAX_PRESS_INTERVAL 1000
-#define HOLD_DURATION 5000
+#define HOLD_DURATION 3000
 
 volatile uint8_t debounceCounter = 0;
 volatile bool switchDebounced = false;
@@ -132,7 +132,7 @@ static void relay_start(void) {
     GPIOA->BSRR |= (ECU_PA11_ON);
 
     // Delay for the fuel pump
-    delay_ms(10000);
+    delay_ms(5000);
 
     // Starter runs for 1 second
     GPIOB->BSRR |= (STARTER_PB7_ON);
@@ -140,8 +140,9 @@ static void relay_start(void) {
     GPIOB->BSRR |= (STARTER_PB7_OFF);
 
     // Waits before checking
-    delay_ms(10000);
+    //delay_ms(5000);
 
+    /*
     // Checks if the car is running again.
     if ((GPIOA->IDR & (1U << 7)) == 0) { 
 
@@ -162,8 +163,9 @@ static void relay_start(void) {
 
         // Enter standby mode
         standby_mode();
-      }    
+      }
     }
+    */
 
     // Car stays running for the amount of the delay
     delay_ms(30000);
@@ -174,6 +176,7 @@ static void relay_start(void) {
     standby_mode();
   }
 }
+
 
 // ISR gets called when the brakes are pulled high. Shutting down both relays
 // and entering standby mode.
