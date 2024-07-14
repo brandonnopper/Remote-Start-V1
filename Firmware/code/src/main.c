@@ -14,6 +14,7 @@
 #define ECU_PA11_OFF          (1U << 27)
 
 #define DEBOUNCE_DELAY_MS 50
+#define NOISE_DELAY_MS 25
 
 #define MAX_PRESS_INTERVAL 1000
 #define HOLD_DURATION 3000
@@ -168,7 +169,7 @@ static void relay_start(void) {
     */
 
     // Car stays running for the amount of the delay
-    delay_ms(30000);
+    delay_ms(15000);
     GPIOA->BSRR |= (ECU_PA11_OFF);
 
     delay_ms(10000);
@@ -188,11 +189,24 @@ void EXTI15_10_IRQHandler(void) {
     // Clear PR flag
     EXTI->PR |= (1U << 11);
 
-    GPIOA->BSRR |= ECU_PA11_OFF;
-    GPIOB->BSRR |= STARTER_PB7_OFF;
+    uint32_t newStartTime = ticks;
 
-    // Enter standby mode so it does not jump back into the relay_start funciton.
-    standby_mode();
+    /* The statements below protects shutting down from noise that occurs on the wireing
+     * the brake input is connected to.
+     * PB11 has to be pulled high for longer than NOISE_DELAY_MS*/
+    while((GPIOB->IDR & (1U << 11)) != 0) {
+
+      if(ticks - newStartTime >= NOISE_DELAY_MS) {
+
+
+        GPIOA->BSRR |= ECU_PA11_OFF;
+        GPIOB->BSRR |= STARTER_PB7_OFF;
+
+        // Enter standby mode so it does not jump back into the relay_start funciton.
+        standby_mode();
+
+      }
+    }
   }
 }
 
@@ -206,14 +220,27 @@ void EXTI4_IRQHandler(void) {
     // Clear PR flag
     EXTI->PR |= (1U << 4);
 
-    GPIOA->BSRR |= ECU_PA11_OFF;
-    GPIOB->BSRR |= STARTER_PB7_OFF;
+    uint32_t newStartTime = ticks;
 
-    // Enter standby mode so it does not jump back into the relay_start funciton.
-    standby_mode();
+    /* The statements below protects shutting down from noise that occurs on the wireing
+     * the key position input is connected to.
+     * PA4 has to be pulled high for longer than NOISE_DELAY_MS
+     * */
+    while((GPIOA->IDR & (1U << 4)) != 0) {
+
+      if(ticks - newStartTime >= NOISE_DELAY_MS) {
+
+
+        GPIOA->BSRR |= ECU_PA11_OFF;
+        GPIOB->BSRR |= STARTER_PB7_OFF;
+
+        // Enter standby mode so it does not jump back into the relay_start funciton.
+        standby_mode();
+      }
+    }
   }
 }
-
+/*
 void EXTI0_IRQHandler(void) {
 
   // Checks if the trigger request has occurred
@@ -223,6 +250,7 @@ void EXTI0_IRQHandler(void) {
     EXTI->PR |= (1U << 0);
   }
 }
+*/
 
 // ISR Function used for debouncing. This interrupt gets called every 1ms.
 void TIM2_IRQHandler(void) {
