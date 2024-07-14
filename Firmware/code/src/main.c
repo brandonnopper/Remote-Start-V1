@@ -38,7 +38,7 @@ int main(void) {
   // Initialize the system clock to 72Mhz
   clock_init();
 
-  // Initialize GPIOA and GPIOB
+   // Initialize GPIOA and GPIOB
   gpio_init();
 
   // Initialize GPIO interrupt
@@ -220,7 +220,7 @@ void EXTI4_IRQHandler(void) {
     // Clear PR flag
     EXTI->PR |= (1U << 4);
 
-    uint32_t newStartTime = ticks;
+    uint32_t newerStartTime = ticks;
 
     /* The statements below protects shutting down from noise that occurs on the wireing
      * the key position input is connected to.
@@ -228,7 +228,7 @@ void EXTI4_IRQHandler(void) {
      * */
     while((GPIOA->IDR & (1U << 4)) != 0) {
 
-      if(ticks - newStartTime >= NOISE_DELAY_MS) {
+      if(ticks - newerStartTime >= NOISE_DELAY_MS) {
 
 
         GPIOA->BSRR |= ECU_PA11_OFF;
@@ -240,7 +240,8 @@ void EXTI4_IRQHandler(void) {
     }
   }
 }
-/*
+
+
 void EXTI0_IRQHandler(void) {
 
   // Checks if the trigger request has occurred
@@ -250,7 +251,7 @@ void EXTI0_IRQHandler(void) {
     EXTI->PR |= (1U << 0);
   }
 }
-*/
+
 
 // ISR Function used for debouncing. This interrupt gets called every 1ms.
 void TIM2_IRQHandler(void) {

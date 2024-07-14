@@ -43,13 +43,14 @@ void exti_init(void) {
   // ISR for EXTI0 is enabled in the standby_mode function for this project 
   // Enable EXTI0, EXTI4 and EXTI11 lines in NVIC (function in cortexm3.h file)
   // NVIC_EnableIRQ(EXTI0_IRQn);
+
   NVIC_EnableIRQ(EXTI4_IRQn);
   NVIC_EnableIRQ(EXTI15_10_IRQn);
 
   // Set prioorities for EXTI0, EXTI4 and EXTI11
-  NVIC_SetPriority(EXTI0_IRQn, 3);
-  NVIC_SetPriority(EXTI4_IRQn, 1);
-  NVIC_SetPriority(EXTI15_10_IRQn, 2);
+  NVIC_SetPriority(EXTI0_IRQn, 1);
+  NVIC_SetPriority(EXTI4_IRQn, 2);
+  NVIC_SetPriority(EXTI15_10_IRQn, 3);
 
   // Enable all global interrupts
   __enable_irq();

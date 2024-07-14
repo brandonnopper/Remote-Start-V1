@@ -14,12 +14,12 @@ void tim2_init(void) {
   TIM2->ARR = 1000 - 1;  // 1000Hz = 1ms period
 
   // Enable update interrupt
-  TIM2->DIER |= TIM2_DEIR_UIE;
-
-  NVIC_SetPriority(TIM2_IRQn, 0);
+  TIM2->DIER |= TIM2_DEIR_UIE; 
 
   // Enable TIM2 interrupt in NVIC
   NVIC_EnableIRQ(TIM2_IRQn);
+
+  NVIC_SetPriority(TIM2_IRQn, 0);
 
   // Enable TIM2
   TIM2->CR1 |= TIM2_CR1EN;
